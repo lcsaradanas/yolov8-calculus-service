@@ -1,5 +1,7 @@
 venv/
 __pycache__/
 .git/
+.vscode/
 runs/
 Predictions/
+requirements-full.txt
