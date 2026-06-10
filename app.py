@@ -11,8 +11,8 @@ import base64
 app = FastAPI()
 
 # Load model once at startup
-MODEL_PATH = "mbest.pt"
-model = YOLO(MODEL_PATH)
+MODEL_PATH = "mbest.onnx"
+model = YOLO(MODEL_PATH, task="detect")
 
 
 def draw_boxes_with_labels(image, result):
