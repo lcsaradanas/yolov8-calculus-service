@@ -89,9 +89,11 @@ async def predict(file: UploadFile = File(...)):
         # Run YOLO prediction
         results = model.predict(
             source=image_bgr,
+            imgsz=640,
             conf=0.25,
             save=False,
-            show=False
+            show=False,
+            verbose=False
         )
 
         result = results[0]
