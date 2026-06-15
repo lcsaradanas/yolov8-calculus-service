@@ -100,18 +100,15 @@ async def predict(file: UploadFile = File(...)):
 
         detections = []
 
-        highest_confidence = 0
+        confidences = []
 
         if len(result.boxes) > 0:
 
             for box in result.boxes:
 
                 confidence = float(box.conf[0])
-
-                highest_confidence = max(
-                    highest_confidence,
-                    confidence
-                )
+                
+                confidences.append(confidence)
 
                 detections.append({
                     "confidence": round(
@@ -124,6 +121,11 @@ async def predict(file: UploadFile = File(...)):
                     ]
                 })
 
+        if confidences:
+            average_confidence = sum(confidences) / len(confidences)
+        else:
+            average_confidence = 0.0
+        
         # Number of detected calculus regions
         calculus_amount = len(result.boxes)
 
@@ -181,9 +183,9 @@ async def predict(file: UploadFile = File(...)):
             "oral_health_status":
                 oral_health_status,
 
-            "highest_confidence":
+            "average_confidence":
                 round(
-                    highest_confidence * 100,
+                    average_confidence * 100,
                     2
                 ),
 
