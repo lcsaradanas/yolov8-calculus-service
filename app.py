@@ -107,7 +107,6 @@ async def predict(file: UploadFile = File(...)):
             for box in result.boxes:
 
                 confidence = float(box.conf[0])
-                
                 confidences.append(confidence)
 
                 detections.append({
@@ -125,7 +124,6 @@ async def predict(file: UploadFile = File(...)):
             average_confidence = sum(confidences) / len(confidences)
         else:
             average_confidence = 0.0
-        
         # Number of detected calculus regions
         calculus_amount = len(result.boxes)
 
