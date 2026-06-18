@@ -204,8 +204,3 @@ Model Type:
 * YOLOv8
 * Custom-trained dental calculus detection model
 
----
-
-## Authors
-
-Developed as part of a capstone project on dental calculus severity classification using image processing and YOLOv8.
