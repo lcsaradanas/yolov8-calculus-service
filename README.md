@@ -38,7 +38,7 @@ A FastAPI-based inference service that uses a YOLOv8 model to detect and classif
 
 ### Backend
 
-* Python 3.12
+* Python 3.11
 * FastAPI
 * Uvicorn
 
