@@ -203,4 +203,5 @@ Model Type:
 
 * YOLOv8
 * Custom-trained dental calculus detection model
+* Roboflow Dataset: https://universe.roboflow.com/dental-iex5i/calculus-tzg18
 
